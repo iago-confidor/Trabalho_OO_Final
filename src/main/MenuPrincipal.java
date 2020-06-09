@@ -5,7 +5,7 @@ public class MenuPrincipal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//teste de git do bruninhos
+		//teste de git do bruninho
 
 	}
 
