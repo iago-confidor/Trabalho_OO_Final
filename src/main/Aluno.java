@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 
 public class Aluno {
 	int matricula;
@@ -15,8 +16,5 @@ public class Aluno {
 	}
 	public void setNomeAluno(String nomeAluno) {
 		this.nomeAluno = nomeAluno;
-	}
-	
-	
-	
+	}	
 }
