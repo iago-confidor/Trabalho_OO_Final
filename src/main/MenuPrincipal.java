@@ -37,8 +37,7 @@ public class MenuPrincipal {
 					break;
 					
 				case 5:
-					Aluno classeAlu = new Aluno();
-					classeAlu.ListarAlunos();
+					Listar();
 					break;
 					
 				case 6:
@@ -52,6 +51,23 @@ public class MenuPrincipal {
 	} while(op!=6);
 }
 
+	@SuppressWarnings("resource")
+	private static void Listar() {
+		Scanner read = new Scanner(System.in);		
+		System.out.println("1- Listar Alunos ou 2- Listar Disciplinas: ");
+		int x = Integer.parseInt(read.nextLine());
+		
+		if(x==1) {
+			Aluno classeAlu = new Aluno();
+			classeAlu.ListarAlunos();	
+		}
+		else if(x==2) {
+			Disciplina classeDisciplina = new Disciplina();
+			classeDisciplina.ListarDisciplinas();	
+		}
+	}
+
+	@SuppressWarnings("resource")
 	private static void CalcularMedias() {
 		Scanner read = new Scanner(System.in);
 		double nota1 = read.nextDouble();
@@ -63,9 +79,20 @@ public class MenuPrincipal {
 	}
 
 	private static void AddDisciplina() {
-		
+		Scanner read = new Scanner(System.in);
+		int codigoDisciplina;
+		String nomeDisciplina;
+        
+		System.out.println("Cadastre o código da Disciplina: ");
+		codigoDisciplina = Integer.parseInt(read.nextLine());		
+		System.out.println("Digite o nome da Disciplina: ");
+		nomeDisciplina = read.nextLine();
+
+		Disciplina classeDisciplina = new Disciplina();
+		classeDisciplina.AddDisciplinaInList(codigoDisciplina, nomeDisciplina);
 	}
 
+	@SuppressWarnings("resource")
 	private static void AddAluno() {
 		Scanner read = new Scanner(System.in);
 		int matricula;
@@ -76,7 +103,6 @@ public class MenuPrincipal {
 		
 		System.out.println("Digite o nome do Aluno: ");
         nomeAluno = read.nextLine();
-
         
 		Aluno classeAlu = new Aluno();
 		classeAlu.AddAluInList(matricula, nomeAluno);

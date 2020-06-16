@@ -35,7 +35,6 @@ public class Aluno {
 	}
 		
 	private static Aluno addAlu(int matricula2, String nomeAluno2) {
-		System.out.println(matricula2 + nomeAluno2);
 		Aluno alu = new Aluno();
 		alu.setMatricula(matricula2);
 		alu.setNomeAluno(nomeAluno2);

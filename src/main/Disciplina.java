@@ -5,7 +5,7 @@ public class Disciplina {
 	int codigoDisciplina;
 	String nomeDisciplina;
 	
-	ArrayList<Disciplina>listaAlu = new ArrayList<Disciplina>();
+	private static ArrayList<Disciplina>listaDisciplina = new ArrayList<Disciplina>();
 
 	public String getNomeDisciplina() {
 		return nomeDisciplina;
@@ -23,14 +23,21 @@ public class Disciplina {
 		this.codigoDisciplina = codigoDisciplina;
 	}
 	
-	public void AddDisciplinaInList(int codigoDisciplina, String nomeDisciplina) {
-		listaAlu.add(AddDisciplina(codigoDisciplina, nomeDisciplina));
+	public void ListarDisciplinas() {
+		System.out.println("\nListagem de Disciplinas: ");
+		for(Disciplina lista : listaDisciplina) {
+			System.out.println("Matrícula: "+ lista.getCodigoDisciplina()+" - Nome: "+ lista.getNomeDisciplina());		
+		}
+	}
+	
+	public void AddDisciplinaInList(int codigoDisciplina2, String nomeDisciplina2) {
+		listaDisciplina.add(AddDisciplina(codigoDisciplina2, nomeDisciplina2));
 	}
 		
-	private static Disciplina AddDisciplina(int codigoDisciplina, String nomeDisciplina) {
+	private static Disciplina AddDisciplina(int codigoDisciplina2, String nomeDisciplina2) {
 		Disciplina materia = new Disciplina();
-		materia.setCodigoDisciplina(codigoDisciplina);
-		materia.setNomeDisciplina(nomeDisciplina);
+		materia.setCodigoDisciplina(codigoDisciplina2);
+		materia.setNomeDisciplina(nomeDisciplina2);
 		return materia;
 	}	
 }
