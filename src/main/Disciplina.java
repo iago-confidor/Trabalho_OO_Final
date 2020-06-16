@@ -32,6 +32,5 @@ public class Disciplina {
 		materia.setCodigoDisciplina(codigoDisciplina);
 		materia.setNomeDisciplina(nomeDisciplina);
 		return materia;
-	}
-	
+	}	
 }
