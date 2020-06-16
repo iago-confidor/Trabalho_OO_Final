@@ -23,10 +23,21 @@ public class Aluno {
 		this.nomeAluno = nomeAluno;
 	}	
 	
+	public String SelectAluno(int matricula2) {
+		String nomeAlunoAux=null;
+		for(Aluno lista : listaAlu) {
+			if(matricula2 == lista.getMatricula()) {
+				nomeAlunoAux = lista.getNomeAluno();
+			}
+		}
+		return nomeAlunoAux;
+	}
+	
 	public void ListarAlunos() {
 		System.out.println("\nListagem de Alunos: ");
 		for(Aluno lista : listaAlu) {
-			System.out.println("Matrícula: "+ lista.getMatricula() +" - Nome: "+ lista.getNomeAluno());		
+			System.out.println("\nMatrícula: "+ lista.getMatricula() +
+					"\nNome: "+ lista.getNomeAluno());		
 		}
 	}
 	

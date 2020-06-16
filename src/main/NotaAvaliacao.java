@@ -2,10 +2,26 @@ package main;
 
 public abstract class NotaAvaliacao {
 	int matriculaAluno;
-	String nomeDisciplica;
+	int codDisciplina;
 	int mediaAritimetica;
 	int mediaPonderada;
 	
+	String nomeDisciplica;
+	String nomeAluno;
+
+	
+	public int getCodDisciplina() {
+		return codDisciplina;
+	}
+	public void setCodDisciplina(int codDisciplina) {
+		this.codDisciplina = codDisciplina;
+	}
+	public String getNomeAluno() {
+		return nomeAluno;
+	}
+	public void setNomeAluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
+	}
 	public int getMatriculaAluno() {
 		return matriculaAluno;
 	}
