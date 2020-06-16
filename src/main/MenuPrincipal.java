@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 	
-	@SuppressWarnings("resource")
-	
 	public static void main(String[] args) {
 		int op = 0;
 		
 		do {
-			System.out.println("Sistema de Notas");
+			System.out.println("\nSistema de Notas");
 			System.out.println("1 - Add Aluno");
 			System.out.println("2 - Add Disciplina");
 			System.out.println("3 - Adicionar Notas");
@@ -39,7 +37,8 @@ public class MenuPrincipal {
 					break;
 					
 				case 5:
-					ListarAlunos();
+					Aluno classeAlu = new Aluno();
+					classeAlu.ListarAlunos();
 					break;
 					
 				case 6:
@@ -52,13 +51,7 @@ public class MenuPrincipal {
 		}
 	} while(op!=6);
 }
-	
-	private static void ListarAlunos() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@SuppressWarnings("resource")
 	private static void CalcularMedias() {
 		Scanner read = new Scanner(System.in);
 		double nota1 = read.nextDouble();
@@ -70,31 +63,26 @@ public class MenuPrincipal {
 	}
 
 	private static void AddDisciplina() {
-		Scanner read = new Scanner(System.in);
 		
-		Disciplina matematica = new Disciplina();
-		String nomeDisciplina;
-		int codigoDisciplina;
 	}
 
-	@SuppressWarnings("resource")
 	private static void AddAluno() {
 		Scanner read = new Scanner(System.in);
 		int matricula;
 		String nomeAluno;
+        
+		System.out.println("Cadastre um Nro de matrícula para o Aluno: ");
+        matricula = Integer.parseInt(read.nextLine());
 		
 		System.out.println("Digite o nome do Aluno: ");
         nomeAluno = read.nextLine();
-        
-		System.out.println("Cadastre um Nro de matrícula para o Aluno: ");
-        matricula = read.nextInt();
+
         
 		Aluno classeAlu = new Aluno();
 		classeAlu.AddAluInList(matricula, nomeAluno);
 		
 	}
 
-	@SuppressWarnings("resource")
 	private static void AddNotas() {
 		Scanner read = new Scanner(System.in);
 		
