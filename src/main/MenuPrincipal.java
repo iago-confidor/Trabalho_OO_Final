@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 	
+	@SuppressWarnings("resource")
+	
 	public static void main(String[] args) {
 		int op = 0;
 		
 		do {
-			Scanner read = new Scanner(System.in);		
 			System.out.println("Sistema de Notas");
 			System.out.println("1 - Add Aluno");
 			System.out.println("2 - Add Disciplina");
@@ -17,6 +18,7 @@ public class MenuPrincipal {
 			System.out.println("5 - Listar");
 			System.out.println("6 - Sair");
 			System.out.printf("Escolha a opção: ");
+			Scanner read = new Scanner(System.in);		
 			op = read.nextInt();
 					
 			switch(op) {
@@ -56,6 +58,7 @@ public class MenuPrincipal {
 		
 	}
 
+	@SuppressWarnings("resource")
 	private static void CalcularMedias() {
 		Scanner read = new Scanner(System.in);
 		double nota1 = read.nextDouble();
@@ -63,31 +66,35 @@ public class MenuPrincipal {
 		double nota3 = read.nextDouble();
 		double media;
 		media = (nota1 * 1 + nota2 * 2 + nota3 * 3) / 10;
-		System.out.println("A média do Aluno é " + media);
-		
-		
+		System.out.println("A média do Aluno é " + media);		
 	}
 
 	private static void AddDisciplina() {
 		Scanner read = new Scanner(System.in);
+		
 		Disciplina matematica = new Disciplina();
 		String nomeDisciplina;
 		int codigoDisciplina;
-		
-		
 	}
 
+	@SuppressWarnings("resource")
 	private static void AddAluno() {
 		Scanner read = new Scanner(System.in);
-		Aluno guri = new Aluno();
-		String nomeAluno;
 		int matricula;
+		String nomeAluno;
 		
-	
-		
+		System.out.println("Digite o nome do Aluno: ");
+        nomeAluno = read.nextLine();
+        
+		System.out.println("Cadastre um Nro de matrícula para o Aluno: ");
+        matricula = read.nextInt();
+        
+		Aluno classeAlu = new Aluno();
+		classeAlu.AddAluInList(matricula, nomeAluno);
 		
 	}
 
+	@SuppressWarnings("resource")
 	private static void AddNotas() {
 		Scanner read = new Scanner(System.in);
 		
