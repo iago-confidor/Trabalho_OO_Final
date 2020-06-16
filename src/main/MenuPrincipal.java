@@ -57,12 +57,23 @@ public class MenuPrincipal {
 	}
 
 	private static void CalcularMedias() {
-		// TODO Auto-generated method stub
+		Scanner read = new Scanner(System.in);
+		double nota1 = read.nextDouble();
+		double nota2 = read.nextDouble();
+		double nota3 = read.nextDouble();
+		double media;
+		media = (nota1 * 1 + nota2 * 2 + nota3 * 3) / 10;
+		System.out.println("A média do Aluno é " + media);
+		
 		
 	}
 
 	private static void AddDisciplina() {
-		// TODO Auto-generated method stub
+		Scanner read = new Scanner(System.in);
+		Disciplina matematica = new Disciplina();
+		String nomeDisciplina;
+		int codigoDisciplina;
+		
 		
 	}
 
