@@ -50,7 +50,6 @@ public class MenuPrincipal {
 	} while(op!=6);
 }
 
-	@SuppressWarnings("resource")
 	private static void CalcularMedias() {
 		
 	}
@@ -122,8 +121,9 @@ public class MenuPrincipal {
 					
 					notaP.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
 							classeDisciplina.SelectDisciplina(codigoDisciplina), p1, p2);
-				}
-				else if(classeDisciplina.SelectDisciplina(codigoDisciplina).equals("Teórica")) {
+				} 
+				
+				else if(classeDisciplina.SelectTipoDisciplina(codigoDisciplina).equals("Teórica")) {
 					NotaAvaliacaoTeorica notaT = new NotaAvaliacaoTeorica();
 					int t1, t2, t3;
 					
@@ -164,10 +164,9 @@ public class MenuPrincipal {
 		}
 		else if(x==3) {
 			NotaAvaliacaoTeorica classeTeorica = new NotaAvaliacaoTeorica();
-			classeTeorica.ListarTeoricas();
-			
+			classeTeorica.ListarNotaTeoricas();
 			NotaAvaliacaoPratica classePratica = new NotaAvaliacaoPratica();
-			classePratica.ListarPraticas();
+			classePratica.ListarNotaPraticas();
 		}
 	}
 }

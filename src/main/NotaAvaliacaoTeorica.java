@@ -31,9 +31,9 @@ public class NotaAvaliacaoTeorica extends NotaAvaliacao{
 		this.t3 = t3;
 	}
 	
-	public void AddNotasInList(int matricula2, String nomeAluno2, 
-			int codigoDisciplina2, String nomeDisciplina2, int t12, int t22, int t32) {	
-		listaNotaTeorica.add(addNotas(matricula2, nomeAluno2, codigoDisciplina2, nomeDisciplina2, t12, t22, t32));
+	public void AddNotasInList(int matricula, String nomeAluno, 
+			int codigoDisciplina, String nomeDisciplina, int t1, int t2, int t3) {	
+		listaNotaTeorica.add(addNotas(matricula, nomeAluno, codigoDisciplina, nomeDisciplina, t1, t2, t3));
 	}
 			
 	private static NotaAvaliacaoTeorica addNotas(int matricula2, String nomeAluno2, 
@@ -45,16 +45,16 @@ public class NotaAvaliacaoTeorica extends NotaAvaliacao{
 		notaT.setNomeDisciplica(nomeDisciplina2);
 		notaT.setT1(t12);
 		notaT.setT2(t22);
-		notaT.setT2(t32);
+		notaT.setT3(t32);
 		return notaT;
 	}
 	
-	public void ListarTeoricas() {
+	public void ListarNotaTeoricas() {
 		System.out.println("\nListagem de Notas Teóricas: ");
 		for(NotaAvaliacaoTeorica lista : listaNotaTeorica) {
 			System.out.println("\nMatrícula: "+ lista.getMatriculaAluno() +
 					"\nNome: "+ lista.getNomeAluno()+ "\nDisciplina: " + lista.getNomeDisciplica()+
-					"\nNota T1: "+lista.getT1()+"\nNota T2: "+lista.getT1()+"\nNota T3: "+lista.getT1());		
+					"\nNota T1: "+lista.getT1()+"\nNota T2: "+lista.getT2()+"\nNota T3: "+lista.getT3());		
 		}
 	}
 }
