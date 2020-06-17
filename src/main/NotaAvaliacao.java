@@ -2,12 +2,13 @@ package main;
 
 public abstract class NotaAvaliacao {
 	int matriculaAluno;
+	String nomeAluno;
+	
 	int codDisciplina;
 	int mediaAritimetica;
 	int mediaPonderada;
 	
 	String nomeDisciplica;
-	String nomeAluno;
 
 	
 	public int getCodDisciplina() {

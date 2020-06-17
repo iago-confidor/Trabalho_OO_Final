@@ -127,13 +127,13 @@ public class MenuPrincipal {
 					NotaAvaliacaoTeorica notaT = new NotaAvaliacaoTeorica();
 					int t1, t2, t3;
 					
-					System.out.println("Digite a nota da P1: ");
+					System.out.println("Digite a nota da T1: ");
 					t1 = Integer.parseInt(read.nextLine());
 					
-					System.out.println("Digite a nota da P2: ");
+					System.out.println("Digite a nota da T2: ");
 					t2 = Integer.parseInt(read.nextLine());
 					
-					System.out.println("Digite a nota da P2: ");
+					System.out.println("Digite a nota da T3: ");
 					t3 = Integer.parseInt(read.nextLine());
 					
 					notaT.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
