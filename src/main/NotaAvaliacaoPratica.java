@@ -28,13 +28,22 @@ public class NotaAvaliacaoPratica extends NotaAvaliacao{
 			int codigoDisciplina2, String nomeDisciplina2, int p12, int p22) {	
 		listaNotaPratica.add(addNotas(codigoDisciplina2, nomeDisciplina2, matricula2, nomeAluno2, p12, p22));
 	}
-		
+	
+	public void ListarPraticas() {
+		System.out.println("\nListagem de Notas Práticas: ");
+		for(NotaAvaliacaoPratica lista : listaNotaPratica) {
+			System.out.println("\nMatrícula: "+ lista.getMatriculaAluno() +
+					"\nNome: "+ lista.getNomeAluno()+ "\nDisciplina: " + lista.getNomeDisciplica()+
+					"\nNota T1: "+lista.getP1()+"\nNota T2: "+lista.getP2());		
+		}
+	}
+	
 	private static NotaAvaliacaoPratica addNotas(int matricula2, String nomeAluno2, 
 					int codigoDisciplina2, String nomeDisciplina2, int p12, int p22) {
 		NotaAvaliacaoPratica nota = new NotaAvaliacaoPratica();
 		nota.setMatriculaAluno(matricula2);
-		nota.setCodDisciplina(codigoDisciplina2);
 		nota.setNomeAluno(nomeAluno2);
+		nota.setCodDisciplina(codigoDisciplina2);
 		nota.setNomeDisciplica(nomeDisciplina2);
 		nota.setP1(p12);
 		nota.setP2(p22);

@@ -165,6 +165,9 @@ public class MenuPrincipal {
 		else if(x==3) {
 			NotaAvaliacaoTeorica classeTeorica = new NotaAvaliacaoTeorica();
 			classeTeorica.ListarTeoricas();
+			
+			NotaAvaliacaoPratica classePratica = new NotaAvaliacaoPratica();
+			classePratica.ListarPraticas();
 		}
 	}
 }
