@@ -5,11 +5,10 @@ public abstract class NotaAvaliacao {
 	String nomeAluno;
 	
 	int codDisciplina;
-	int mediaAritimetica;
-	int mediaPonderada;
+	double mediaAritimetica;
+	double mediaPonderada;
 	
 	String nomeDisciplica;
-
 	
 	public int getCodDisciplina() {
 		return codDisciplina;
@@ -35,13 +34,13 @@ public abstract class NotaAvaliacao {
 	public void setNomeDisciplica(String nomeDisciplica) {
 		this.nomeDisciplica = nomeDisciplica;
 	}
-	public int getMediaAritimetica() {
+	public double getMediaAritimetica() {
 		return mediaAritimetica;
 	}
-	public void setMediaAritimetica(int mediaAritimetica) {
-		this.mediaAritimetica = mediaAritimetica;
+	public void setMediaAritimetica(double mediaA) {
+		this.mediaAritimetica = mediaA;
 	}
-	public int getMediaPonderada() {
+	public double getMediaPonderada() {
 		return mediaPonderada;
 	}
 	public void setMediaPonderada(int mediaPonderada) {

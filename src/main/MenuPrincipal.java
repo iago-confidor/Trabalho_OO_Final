@@ -51,7 +51,10 @@ public class MenuPrincipal {
 }
 
 	private static void CalcularMedias() {
-		
+		NotaAvaliacaoPratica notaP = new NotaAvaliacaoPratica();
+		notaP.CalculaMedia();
+		NotaAvaliacaoTeorica notaT = new NotaAvaliacaoTeorica();
+		notaT.CalculaMedia();
 	}
 	
 	@SuppressWarnings("resource")
@@ -112,12 +115,13 @@ public class MenuPrincipal {
 				if(classeDisciplina.SelectTipoDisciplina(codigoDisciplina).equals("Prática")) {
 					NotaAvaliacaoPratica notaP = new NotaAvaliacaoPratica();
 					
-					int p1, p2;
+					double p1;
+					double p2;
 					System.out.println("Digite a nota da P1: ");
-					p1 = Integer.parseInt(read.nextLine());
+					p1 = Double.parseDouble(read.nextLine());
 					
 					System.out.println("Digite a nota da P2: ");
-					p2 = Integer.parseInt(read.nextLine());
+					p2 = Double.parseDouble(read.nextLine());
 					
 					notaP.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
 							classeDisciplina.SelectDisciplina(codigoDisciplina), p1, p2);
@@ -125,16 +129,16 @@ public class MenuPrincipal {
 				
 				else if(classeDisciplina.SelectTipoDisciplina(codigoDisciplina).equals("Teórica")) {
 					NotaAvaliacaoTeorica notaT = new NotaAvaliacaoTeorica();
-					int t1, t2, t3;
+					double t1, t2, t3;
 					
 					System.out.println("Digite a nota da T1: ");
-					t1 = Integer.parseInt(read.nextLine());
+					t1 = Double.parseDouble(read.nextLine());
 					
 					System.out.println("Digite a nota da T2: ");
-					t2 = Integer.parseInt(read.nextLine());
+					t2 = Double.parseDouble(read.nextLine());
 					
 					System.out.println("Digite a nota da T3: ");
-					t3 = Integer.parseInt(read.nextLine());
+					t3 = Double.parseDouble(read.nextLine());
 					
 					notaT.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
 							classeDisciplina.SelectDisciplina(codigoDisciplina), t1, t2, t3);
