@@ -21,7 +21,7 @@ public class Aluno {
 	
 	public void setNomeAluno(String nomeAluno) {
 		this.nomeAluno = nomeAluno;
-	}	
+	}
 	
 	public String SelectAluno(int matricula2) {
 		String nomeAlunoAux=null;

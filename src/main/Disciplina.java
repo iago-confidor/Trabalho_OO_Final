@@ -44,9 +44,21 @@ public class Disciplina {
 	public String SelectDisciplina(int codigoDisciplina2) {
 		String nomeDisciplinaAux=null;
 		for(Disciplina lista : listaDisciplina) {
-			
+			if(codigoDisciplina2 == lista.getCodigoDisciplina()) {
+				nomeDisciplinaAux = lista.getNomeDisciplina();
+			}
 		}
 		return nomeDisciplinaAux;
+	}
+	
+	public String SelectTipoDisciplina(int codigoDisciplina2) {
+		String tipoDisciplinaAux=null;
+		for(Disciplina lista : listaDisciplina) {
+			if(codigoDisciplina2 == lista.getCodigoDisciplina()) {
+				tipoDisciplinaAux = lista.getTipoDisciplina();
+			}
+		}
+		return tipoDisciplinaAux;
 	}
 	
 	public void AddDisciplinaInList(int codigoDisciplina2, String nomeDisciplina2, String tipoDisciplina2) {

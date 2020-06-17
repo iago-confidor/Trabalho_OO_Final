@@ -101,29 +101,57 @@ public class MenuPrincipal {
 
 		Scanner read = new Scanner(System.in);
 		System.out.println("Digite o código da Disciplina: ");
-        int codigoDisciplina = Integer.parseInt(read.nextLine());	
-        
+        int codigoDisciplina = Integer.parseInt(read.nextLine());	        
 		Disciplina classeDisciplina = new Disciplina();
-		if(classeDisciplina.SelectDisciplina(codigoDisciplina)!= null) {
+		
+		if(classeDisciplina.SelectDisciplina(codigoDisciplina) !=  null) {
 			System.out.println("Digite a matrícula do Aluno: ");
-			matricula = Integer.parseInt(read.nextLine());		
+			matricula = Integer.parseInt(read.nextLine());
 			
 			Aluno classeAlu = new Aluno();
 			if(classeAlu.SelectAluno(matricula) != null) {
-				
+				if(classeDisciplina.SelectTipoDisciplina(codigoDisciplina).equals("Prática")) {
+					NotaAvaliacaoPratica notaP = new NotaAvaliacaoPratica();
+					
+					int p1, p2;
+					System.out.println("Digite a nota da P1: ");
+					p1 = Integer.parseInt(read.nextLine());
+					
+					System.out.println("Digite a nota da P2: ");
+					p2 = Integer.parseInt(read.nextLine());
+					
+					notaP.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
+							classeDisciplina.SelectDisciplina(codigoDisciplina), p1, p2);
+				}
+				else if(classeDisciplina.SelectDisciplina(codigoDisciplina).equals("Teórica")) {
+					NotaAvaliacaoTeorica notaT = new NotaAvaliacaoTeorica();
+					int t1, t2, t3;
+					
+					System.out.println("Digite a nota da P1: ");
+					t1 = Integer.parseInt(read.nextLine());
+					
+					System.out.println("Digite a nota da P2: ");
+					t2 = Integer.parseInt(read.nextLine());
+					
+					System.out.println("Digite a nota da P2: ");
+					t3 = Integer.parseInt(read.nextLine());
+					
+					notaT.AddNotasInList(matricula, classeAlu.SelectAluno(matricula), codigoDisciplina, 
+							classeDisciplina.SelectDisciplina(codigoDisciplina), t1, t2, t3);
+				}
 			}
 			else {
 				System.out.println("Matrícula Inválida!!");
 			}	
 		} else {
-			System.out.println("Cogido da Disciplina Inválido!!");
+			System.out.println("Codigo da Disciplina Inválido!!");
 		}		
 	}
 	
 	@SuppressWarnings("resource")
 	private static void Listar() {
 		Scanner read = new Scanner(System.in);		
-		System.out.println("\n1- Listar Alunos \n2- Listar Disciplinas: ");
+		System.out.println("\n1- Listar Alunos \n2- Listar Disciplinas\n3- Listar Notas\n4-Medias: ");
 		int x = Integer.parseInt(read.nextLine());
 		
 		if(x==1) {
@@ -133,6 +161,10 @@ public class MenuPrincipal {
 		else if(x==2) {
 			Disciplina classeDisciplina = new Disciplina();
 			classeDisciplina.ListarDisciplinas();	
+		}
+		else if(x==3) {
+			NotaAvaliacaoTeorica classeTeorica = new NotaAvaliacaoTeorica();
+			classeTeorica.ListarTeoricas();
 		}
 	}
 }
