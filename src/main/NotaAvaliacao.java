@@ -43,7 +43,7 @@ public abstract class NotaAvaliacao {
 	public double getMediaPonderada() {
 		return mediaPonderada;
 	}
-	public void setMediaPonderada(int mediaPonderada) {
-		this.mediaPonderada = mediaPonderada;
+	public void setMediaPonderada(double d) {
+		this.mediaPonderada = d;
 	}
 }

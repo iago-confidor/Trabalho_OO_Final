@@ -35,9 +35,6 @@ public class NotaAvaliacaoTeorica extends NotaAvaliacao{
 		System.out.println("\nListagem de Médias - Notas Teóricas: ");
 		for(NotaAvaliacaoTeorica lista : listaNotaTeorica) {
 			double mediaP, mediaA;
-			
-			mediaP = ( lista.getT1() * 1 + lista.getT2() * 2 + lista.getT3() * 3) / 6;
-			mediaA = ( lista.getT1() + lista.getT2() + lista.getT3() ) / 3;
 		}
 	}
 	
@@ -58,6 +55,8 @@ public class NotaAvaliacaoTeorica extends NotaAvaliacao{
 		notaT.setT1(t12);
 		notaT.setT2(t22);
 		notaT.setT3(t32);
+		notaT.setMediaAritimetica((t12+t22+t32)/3);
+		notaT.setMediaPonderada((t12*1)+(t22*2)+(t32*3)/6);
 		return notaT;
 	}
 	

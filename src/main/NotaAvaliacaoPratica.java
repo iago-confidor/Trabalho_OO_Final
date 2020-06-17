@@ -38,9 +38,7 @@ public class NotaAvaliacaoPratica extends NotaAvaliacao{
 			int codigoDisciplina, String nomeDisciplina, double p1, double p2) {	
 		listaNotaPratica.add(addNotas(matricula, nomeAluno, codigoDisciplina, nomeDisciplina, p1, p2));
 	}
-	
-	
-			
+				
 	private static NotaAvaliacaoPratica addNotas(int matricula2, String nomeAluno2, 
 					int codigoDisciplina2, String nomeDisciplina2, double p12, double p22) {
 		NotaAvaliacaoPratica notaP = new NotaAvaliacaoPratica();
@@ -50,6 +48,8 @@ public class NotaAvaliacaoPratica extends NotaAvaliacao{
 		notaP.setNomeDisciplica(nomeDisciplina2);
 		notaP.setP1(p12);
 		notaP.setP2(p22);
+		notaP.setMediaAritimetica((p12+p22)/2);
+		notaP.setMediaPonderada((p12*1)+(p22*2)/3);
 		return notaP;
 	}
 	
